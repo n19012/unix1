@@ -1,1 +1,1 @@
-sudo find /var -type f | xargs du -b 2> /dev/null | sort -n | head -n 5
+sudo find /var -type f -exec du \{\} \; | grep '^0'
