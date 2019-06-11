@@ -1,8 +1,9 @@
-   for file in $(find "$1" -maxdepth 1 -type f)
-   do
-       #fileが実行ファイルであれば表示
-       if [ -x "$file" ]; then
-           #echo "$file
-           #echo "basename
-           echo $(basename "$file")
-           #sudo ls -l "${file}
+#!/bin/bash
+
+file=$1
+if [ -d "$file" ]; then
+   ls -l "$file" | awk '$1~/^-..x/{print $9}'
+else
+    echo "${file}:ディレクトリではありません"
+fi
+
