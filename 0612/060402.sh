@@ -19,3 +19,4 @@ do
     else
         echo "${file}:通常のファイルではありません"
     fi
+done
